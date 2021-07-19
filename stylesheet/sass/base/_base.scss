@@ -1,0 +1,11 @@
+html {
+  font-family: $font-primary;
+  font-size: 62.5%;
+
+  @include mq("ipad") {
+    font-size: 55%;
+  }
+}
+
+body {
+}

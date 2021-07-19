@@ -1,0 +1,108 @@
+.footer {
+  font-family: $font-secondary;
+  margin-top: 4rem;
+  .container {
+    height: 100%;
+    padding: 0 2rem;
+  }
+
+  &-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(18rem, 1fr));
+    gap: 3rem;
+
+    @include mq("ipad") {
+      grid-template-columns: repeat(2, minmax(20rem, 1fr));
+    }
+    @include mq("phone-wide") {
+      grid-template-columns: minmax(15rem, 1fr);
+    }
+    // .logo {
+    //   grid-column: span 2;
+
+    //   @include mq("tablet") {
+    //     grid-column: auto;
+    //   }
+    // }
+    // .contacts {
+    //   grid-column: span 2;
+    // }
+    .products,
+    .legals {
+      padding-left: 8rem;
+      @include mq("ipad") {
+        padding-left: 0;
+      }
+    }
+
+    .col {
+      .img-box {
+        width: 9rem;
+        img {
+          width: 100%;
+        }
+      }
+
+      .descraption {
+        margin-top: 1.5rem;
+        // max-width: 30rem;
+        p {
+          font-size: 1.6rem;
+          line-height: 1.86;
+          letter-spacing: -0.18px;
+          color: $secondary;
+        }
+      }
+
+      h5 {
+        padding-bottom: 3rem;
+      }
+
+      .list-links {
+        li {
+        }
+        a {
+          font-size: 1.4rem;
+          text-transform: capitalize;
+          text-decoration: none;
+          line-height: 1.86;
+          letter-spacing: -0.18px;
+          color: $black;
+          display: inline-block;
+          margin-bottom: 1.5rem;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      p,
+      a {
+        max-width: 28rem;
+        font-size: 1.4rem;
+        line-height: 1.86;
+        letter-spacing: -0.18px;
+        color: $black;
+        margin-bottom: 1.5rem;
+      }
+
+      a {
+        text-decoration: none;
+        margin-top: -1rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &-copyright {
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background-color: $gray-2;
+    text-align: center;
+  }
+}

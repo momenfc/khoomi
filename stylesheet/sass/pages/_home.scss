@@ -1,0 +1,327 @@
+.main {
+}
+
+.wrapper {
+  background-image: url("../../../images/wrapper-img.png");
+  background-size: cover;
+  margin-top: 2rem;
+  background-repeat: no-repeat;
+  height: 59.5rem;
+  .container {
+    height: 100%;
+    display: flex;
+  }
+
+  .content {
+    max-width: 50%;
+    // background-color: khaki;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+
+    @include mq("tablet") {
+      max-width: 100%;
+    }
+
+    h2 {
+    }
+
+    p {
+      font-family: $font-third;
+      font-size: 1.6rem;
+      line-height: 2;
+      letter-spacing: -0.29px;
+      color: $white;
+      opacity: 0.92;
+      margin: 4rem 0;
+    }
+
+    .btn-box {
+      a {
+        margin-right: 1.5rem;
+        display: inline-block;
+      }
+      span {
+        font-family: $font-third;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: -0.36px;
+        color: $white;
+        display: inline-block;
+        border-radius: 0.5rem;
+        background-color: rgba($white, 0.1);
+        padding: 1.7rem 3rem;
+      }
+    }
+  }
+}
+
+.hero {
+  padding: 6rem 0;
+  .container {
+    text-align: center;
+  }
+  &-title {
+    p {
+      font-size: 1.4rem;
+      text-transform: capitalize;
+      line-height: 1.5;
+      letter-spacing: -0.31px;
+      text-align: center;
+      color: $secondary;
+    }
+    h3 {
+      text-align: center;
+      margin-top: -0.5rem;
+    }
+  }
+
+  .rec-exp-btn {
+    display: inline-flex;
+    margin: auto;
+  }
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+// PRODUCT COMBONENT
+.product {
+  padding: 1.5rem 0;
+  background-color: $white;
+
+  &-img {
+    height: 25rem;
+
+    @include mq("phone-wide") {
+      height: 40rem;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.7rem;
+    h4 {
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+    span {
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 1.36;
+      letter-spacing: -0.31px;
+      color: $primary;
+      padding: 0.8rem 1.5rem;
+      margin-top: 1.5rem;
+
+      background-color: rgba($primary, 0.1);
+      border-radius: 1.7rem;
+    }
+  }
+}
+
+// RECOMMENDED
+.recommended {
+  background-color: $white-2;
+}
+
+// COVER
+.cover-wrapper {
+  height: 25.1rem;
+  background-image: linear-gradient(rgba($black, 0.6)),
+    url("../../../images/cover-2x.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .container {
+    height: 100%;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include mq("tablet") {
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    & > * {
+      flex: 0 1 50%;
+      @include mq("tablet") {
+        flex-basis: 0;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 3.5rem;
+    line-height: 1.62;
+    letter-spacing: -1.64px;
+
+    @include mq("tablet") {
+      font-size: 2.7rem;
+      letter-spacing: 0;
+      text-align: center;
+    }
+  }
+
+  .btn-box {
+    a {
+      margin-left: auto;
+    }
+  }
+}
+
+.new-collection {
+  .container {
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(24rem, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+
+    @include mq("ipad") {
+      grid-template-columns: repeat(3, minmax(25rem, 1fr));
+    }
+
+    @include mq("tablet") {
+      grid-template-columns: repeat(2, minmax(25rem, 1fr));
+    }
+    @include mq("phone-wide") {
+      grid-template-columns: minmax(25rem, 1fr);
+    }
+  }
+
+  .product-sale {
+    grid-column: 3/5;
+    grid-row: 1 / 3;
+    padding: 2rem;
+    background-color: $white-2;
+
+    @include mq("ipad") {
+      grid-column: 2/4;
+    }
+
+    @include mq("tablet") {
+      grid-column: 1/3;
+    }
+    @include mq("phone-wide") {
+      grid-column: 1/2;
+    }
+
+    header {
+      @extend %flexBetween;
+
+      span {
+        font-family: $font-primary;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: -0.3px;
+        text-transform: uppercase;
+        color: $primary;
+        padding: 0.8rem 1.5rem;
+        border-radius: 1.7rem;
+      }
+      .sale {
+        color: $white;
+        background-color: $black;
+      }
+      .price {
+        background-color: white;
+      }
+    }
+
+    .img-box {
+      height: 60rem;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    footer {
+      text-align: left;
+      h3 {
+        margin-bottom: -1rem;
+        a {
+          text-decoration: none;
+          color: $secondary;
+        }
+      }
+      span {
+        font-size: 1.4rem;
+        line-height: 2.29;
+        letter-spacing: -0.25px;
+        text-transform: capitalize;
+        color: #7a7a7a;
+      }
+    }
+  }
+
+  .product {
+    background-color: $white-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-info {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+
+      span {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// TRENDING
+.trending {
+  .container {
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+    .product {
+      background-color: $white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-info {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        span {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
