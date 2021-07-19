@@ -20,6 +20,10 @@
     justify-content: center;
     padding: 2rem;
 
+    &:lang(ar) {
+      margin-right: auto;
+    }
+
     @include mq("tablet") {
       max-width: 100%;
     }
@@ -38,8 +42,12 @@
     }
 
     .btn-box {
+      margin: -1rem;
+
+      & > * {
+        margin: 1rem;
+      }
       a {
-        margin-right: 1.5rem;
         display: inline-block;
       }
       span {
@@ -183,7 +191,7 @@
 
   .btn-box {
     a {
-      margin-left: auto;
+      margin: auto;
     }
   }
 }

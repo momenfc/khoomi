@@ -2,6 +2,7 @@
   font-family: $font-secondary;
 
   .container {
+    padding: 0 1rem;
   }
   //
   .top-header {
@@ -60,7 +61,11 @@
         padding: 0;
         position: absolute;
         top: calc(50% - 0.9rem);
-        right: 0rem;
+        right: 0;
+
+        &:lang(ar) {
+          right: 100%;
+        }
 
         img {
           width: 100%;
@@ -100,6 +105,30 @@
         }
       }
     }
+
+    .lang-box {
+      background-color: $white;
+      padding: 0.7rem;
+      width: 8rem;
+      border: 1px solid $gray-2;
+      border-radius: 1.5rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $white-2;
+      }
+      img {
+        width: 2rem;
+        margin: 0.5rem;
+      }
+      span {
+        font-size: 1.2rem;
+      }
+    }
   }
   //
 
@@ -129,12 +158,17 @@
       img {
         width: 1.8rem;
         height: 1.2rem;
-        margin-right: 1rem;
+        margin: 0 1rem;
       }
 
       button {
         margin-left: auto;
         padding: 0;
+
+        &:lang(ar) {
+          margin-left: 0;
+          margin-right: auto;
+        }
         img {
           width: 1rem;
           height: 0.5rem;
@@ -204,6 +238,11 @@
       padding: 0.3rem;
       margin-left: auto;
       display: none;
+
+      &:lang(ar) {
+        margin-left: 0;
+        margin-right: auto;
+      }
       img {
         width: 2.4rem;
         height: 2rem;
@@ -215,3 +254,9 @@
     }
   }
 }
+
+// html:lang("ar") {
+//   .search-btn {
+//     right: 0;
+//   }
+// }
